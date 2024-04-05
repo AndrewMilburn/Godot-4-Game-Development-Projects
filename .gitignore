@@ -15,5 +15,5 @@ data_*/
 mono_crash.*.json
 
 # Ignore Dev Notes, Videos, and Assets
-/Notes_and_Videos
-/Assets
+*/Notes_and_Videos
+*/Assets
