@@ -1,0 +1,52 @@
+[gd_scene load_steps=4 format=3 uid="uid://7n162vmnkgtl"]
+
+[ext_resource type="Script" path="res://HUD.gd" id="1_4pa4i"]
+[ext_resource type="FontFile" uid="uid://tmafahvhd3bb" path="res://assets/Kenney Bold.ttf" id="2_bhttc"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_tpkd8"]
+font = ExtResource("2_bhttc")
+font_size = 48
+shadow_size = 4
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(2, 2)
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource("1_4pa4i")
+
+[node name="Message" type="Label" parent="."]
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -11.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "COIN DASH!!
+"
+label_settings = SubResource("LabelSettings_tpkd8")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Score_&_Time" type="MarginContainer" parent="."]
+anchors_preset = 10
+anchor_right = 1.0
+grow_horizontal = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="Score" type="Label" parent="Score_&_Time"]
+layout_mode = 2
+text = "0
+"
+label_settings = SubResource("LabelSettings_tpkd8")
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Time" type="Label" parent="Score_&_Time"]
+layout_mode = 2
+text = "0"
+label_settings = SubResource("LabelSettings_tpkd8")
+vertical_alignment = 1
