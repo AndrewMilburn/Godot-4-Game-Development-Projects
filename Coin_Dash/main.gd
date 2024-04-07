@@ -1,7 +1,7 @@
 extends Node2D
 
 @export var coin_scene : PackedScene
-@export var playtime = 10
+@export var playtime = 30
 
 var level = 1
 var score = 0
