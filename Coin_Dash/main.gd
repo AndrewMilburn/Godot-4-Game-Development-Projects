@@ -24,6 +24,7 @@ func _on_hud_start_game() -> void:
 	new_game()
 	
 func game_over():
+	$endSound.play()
 	playing = false
 	$gametimer.stop()
 	get_tree().call_group("coins", "queue_free")
@@ -43,6 +44,7 @@ func new_game():	# Now lets get this show on the road
 	$HUD.update_timer(time_left)
 	
 func spawn_coins():
+	$levelSound.play()
 	for i in level + 4:
 		var c = coin_scene.instantiate()
 		add_child(c)
@@ -59,6 +61,7 @@ func _on_player_hurt() -> void:
 	game_over()
 
 func _on_player_pickup() -> void:
+	$coinSound.play()
 	score += 1
 	$HUD.update_score(score)
 	
