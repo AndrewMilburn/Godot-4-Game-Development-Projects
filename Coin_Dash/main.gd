@@ -1,7 +1,7 @@
 extends Node2D
 
 @export var coin_scene : PackedScene
-@export var playtime = 30
+@export var playtime = 10
 
 var level = 1
 var score = 0
@@ -19,6 +19,16 @@ func _process(_delta: float) -> void:	# Do this on a frame-by-frame basis
 		level += 1
 		time_left += 5
 		spawn_coins()
+
+func _on_hud_start_game() -> void:
+	new_game()
+	
+func game_over():
+	playing = false
+	$gametimer.stop()
+	get_tree().call_group("coins", "queue_free")
+	$HUD.show_game_over()
+	$Player.die()
 	
 func new_game():	# Now lets get this show on the road
 	playing = true
@@ -27,8 +37,10 @@ func new_game():	# Now lets get this show on the road
 	time_left = playtime
 	$Player.start()
 	$Player.show()
-	$Timer.start()
+	$gametimer.start()
 	spawn_coins()
+	$HUD.update_score(score)
+	$HUD.update_timer(time_left)
 	
 func spawn_coins():
 	for i in level + 4:
@@ -36,17 +48,19 @@ func spawn_coins():
 		add_child(c)
 		c.screensize = screensize
 		c.position = Vector2(randi_range(0, screensize.x), randi_range(0, screensize.y))
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
+
+func _on_gametimer_timeout() -> void:
+	time_left -= 1
+	$HUD.update_timer(time_left)
+	if time_left <= 0:
+		game_over()
+
+func _on_player_hurt() -> void:
+	game_over()
+
+func _on_player_pickup() -> void:
+	score += 1
+	$HUD.update_score(score)
+	
+
+
