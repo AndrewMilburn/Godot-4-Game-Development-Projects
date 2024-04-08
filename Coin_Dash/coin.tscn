@@ -94,9 +94,9 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("11_fkypn")
 }],
-"loop": true,
+"loop": false,
 "name": &"shiny",
-"speed": 5.0
+"speed": 10.0
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_eedxs"]
@@ -113,3 +113,7 @@ animation = &"shiny"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_eedxs")
+
+[node name="anim_timer" type="Timer" parent="."]
+
+[connection signal="timeout" from="anim_timer" to="." method="_on_anim_timer_timeout"]
