@@ -1,0 +1,7 @@
+2. Make Cacti spawnable (and increase every couple of levels)
+1. Music
+4. Armour Powerup
+2. Add labels for Timer and Score
+5. Screen Shake on Powerup?
+6. Start again
+
