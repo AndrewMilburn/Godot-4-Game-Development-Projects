@@ -1,6 +1,7 @@
 extends Node2D
 
 @export var coin_scene : PackedScene
+@export var powerup_scene : PackedScene
 @export var playtime = 30
 
 var level = 1
@@ -19,7 +20,15 @@ func _process(_delta: float) -> void:	# Do this on a frame-by-frame basis
 		level += 1
 		time_left += 5
 		spawn_coins()
+		$power_up_timer.wait_time = randf_range(3, 7)
+		$power_up_timer.start()
 
+func _on_power_up_timer_timeout() -> void:
+	var p = powerup_scene.instantiate()
+	add_child(p)
+	p.screensize = screensize
+	p.position = Vector2(randi_range(0, screensize.x), randi_range(0, screensize.y))
+	
 func _on_hud_start_game() -> void:
 	new_game()
 	
@@ -60,10 +69,18 @@ func _on_gametimer_timeout() -> void:
 func _on_player_hurt() -> void:
 	game_over()
 
-func _on_player_pickup() -> void:
-	$coinSound.play()
-	score += 1
-	$HUD.update_score(score)
+func _on_player_pickup(type) -> void:
+	match type:
+		"coin":
+			$coinSound.play()
+			score += 1
+			$HUD.update_score(score)
+		"powerup":
+			$powerUpSound.play()
+			time_left += 5
+			$HUD.update_timer(time_left)
 	
+
+
 
 
