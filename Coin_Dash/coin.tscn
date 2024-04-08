@@ -116,4 +116,5 @@ shape = SubResource("CircleShape2D_eedxs")
 
 [node name="anim_timer" type="Timer" parent="."]
 
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="timeout" from="anim_timer" to="." method="_on_anim_timer_timeout"]
