@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://d1bo3w0h3nq10"]
+[gd_scene load_steps=12 format=3 uid="uid://d1bo3w0h3nq10"]
 
 [ext_resource type="PackedScene" uid="uid://dvk4pxk8p0qi7" path="res://player.tscn" id="1_8dump"]
 [ext_resource type="Texture2D" uid="uid://8nbxw62ghc8e" path="res://assets/grass.png" id="1_nts8e"]
@@ -10,6 +10,7 @@
 [ext_resource type="AudioStream" uid="uid://40s1wfsnej8d" path="res://assets/audio/Level.wav" id="7_bcah2"]
 [ext_resource type="AudioStream" uid="uid://bs2uhret3jppr" path="res://assets/audio/EndSound.wav" id="8_0llts"]
 [ext_resource type="AudioStream" uid="uid://ry2trdlv4gw4" path="res://assets/audio/Powerup.wav" id="9_2undo"]
+[ext_resource type="PackedScene" uid="uid://d2vdtebkbf0g4" path="res://cactus.tscn" id="11_8chiu"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_vo31t")
@@ -51,6 +52,12 @@ one_shot = true
 
 [node name="powerUpSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("9_2undo")
+
+[node name="cactus" parent="." instance=ExtResource("11_8chiu")]
+position = Vector2(271, 232)
+
+[node name="cactus2" parent="." instance=ExtResource("11_8chiu")]
+position = Vector2(145, 507)
 
 [connection signal="hurt" from="Player" to="." method="_on_player_hurt"]
 [connection signal="pickup" from="Player" to="." method="_on_player_pickup"]
