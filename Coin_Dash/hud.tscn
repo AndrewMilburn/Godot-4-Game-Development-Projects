@@ -56,6 +56,22 @@ wait_time = 2.0
 one_shot = true
 
 [node name="start_button" type="Button" parent="."]
+anchors_preset = -1
+anchor_left = 0.508
+anchor_top = 0.637
+anchor_right = 0.508
+anchor_bottom = 0.637
+offset_left = -142.84
+offset_top = -40.64
+offset_right = 143.16
+offset_bottom = 40.36
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_bhttc")
+theme_override_font_sizes/font_size = 48
+text = "Start"
+
+[node name="howtoplay_button" type="Button" parent="."]
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
@@ -67,8 +83,54 @@ offset_right = 143.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_fonts/font = ExtResource("2_bhttc")
-theme_override_font_sizes/font_size = 48
-text = "Start"
+theme_override_font_sizes/font_size = 38
+text = "How To Play"
+
+[node name="back_button" type="Button" parent="."]
+visible = false
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -183.0
+offset_top = -87.0
+offset_right = 187.0
+offset_bottom = -6.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("2_bhttc")
+theme_override_font_sizes/font_size = 38
+text = "OK"
+
+[node name="howtoplay_Label" type="Label" parent="."]
+visible = false
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.502
+anchor_right = 0.5
+anchor_bottom = 0.502
+offset_left = -236.0
+offset_top = -250.44
+offset_right = 228.0
+offset_bottom = 250.56
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_bhttc")
+theme_override_font_sizes/font_size = 25
+text = "Use Arrow Keys or WASD to move
+
+Collect all the Coins on one level to get to the next
+
+Avoid the Cacti!!
+
+A Bonus will appear at random, giving you an extra 5 seconds
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
 
 [connection signal="timeout" from="hud_timer" to="." method="_on_timer_timeout"]
 [connection signal="pressed" from="start_button" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="howtoplay_button" to="." method="_on_howtoplay_button_pressed"]
+[connection signal="pressed" from="back_button" to="." method="_on_back_button_pressed"]
