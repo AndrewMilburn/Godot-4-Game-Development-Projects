@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://7n162vmnkgtl"]
+[gd_scene load_steps=6 format=3 uid="uid://7n162vmnkgtl"]
 
 [ext_resource type="Script" path="res://HUD.gd" id="1_4pa4i"]
 [ext_resource type="FontFile" uid="uid://tmafahvhd3bb" path="res://assets/Kenney Bold.ttf" id="2_bhttc"]
@@ -9,6 +9,10 @@ font_size = 48
 shadow_size = 4
 shadow_color = Color(0, 0, 0, 1)
 shadow_offset = Vector2(2, 2)
+
+[sub_resource type="LabelSettings" id="LabelSettings_bjkw2"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ej7ff"]
 
 [node name="HUD" type="CanvasLayer"]
 script = ExtResource("1_4pa4i")
@@ -31,6 +35,9 @@ vertical_alignment = 1
 [node name="Score_&_Time" type="MarginContainer" parent="."]
 anchors_preset = 10
 anchor_right = 1.0
+offset_left = 2.0
+offset_top = 23.0
+offset_bottom = 115.0
 grow_horizontal = 2
 theme_override_constants/margin_left = 10
 theme_override_constants/margin_top = 10
@@ -49,6 +56,34 @@ vertical_alignment = 1
 layout_mode = 2
 text = "0"
 label_settings = SubResource("LabelSettings_tpkd8")
+vertical_alignment = 1
+
+[node name="Score_&_Time_labels" type="MarginContainer" parent="."]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 35.0
+grow_horizontal = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 1
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="lblScore" type="Label" parent="Score_&_Time_labels"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_bhttc")
+theme_override_font_sizes/font_size = 20
+text = "Score
+"
+label_settings = SubResource("LabelSettings_bjkw2")
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="lblTime" type="Label" parent="Score_&_Time_labels"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_bhttc")
+theme_override_font_sizes/font_size = 20
+text = "Time"
+label_settings = SubResource("LabelSettings_ej7ff")
 vertical_alignment = 1
 
 [node name="hud_timer" type="Timer" parent="."]

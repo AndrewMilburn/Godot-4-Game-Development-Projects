@@ -1,6 +1,6 @@
-1. Add "How To Play" screen
-2. Music
-3. Add labels for Timer and Score
+x1. Add "How To Play" screen
+x2. Music
+x3. Add labels for Timer and Score
 4. Make Cacti spawnable (and increase every couple of levels)
 5. Armour Powerup
 6. Screen Shake on Powerup?
