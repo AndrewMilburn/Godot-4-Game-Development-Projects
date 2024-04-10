@@ -91,6 +91,8 @@ func _on_player_pickup(type) -> void:
 			$Sounds/powerUpSound.play()
 			time_left += 5
 			$HUD.update_timer(time_left)
+			
+			
 	
 
 
