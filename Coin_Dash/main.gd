@@ -39,6 +39,7 @@ func game_over():
 	get_tree().call_group("coins", "queue_free")
 	$HUD.show_game_over()
 	$Player.die()
+	$BGMusic.playing = false
 	
 func new_game():	# Now lets get this show on the road
 	playing = true
@@ -51,6 +52,7 @@ func new_game():	# Now lets get this show on the road
 	spawn_coins()
 	$HUD.update_score(score)
 	$HUD.update_timer(time_left)
+	$BGMusic.playing = true
 	
 func spawn_coins():
 	$levelSound.play()
