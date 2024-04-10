@@ -1,7 +1,7 @@
 x1. Add "How To Play" screen
 x2. Music
 x3. Add labels for Timer and Score
-4. Make Cacti spawnable (and increase every couple of levels)
+x4. Make Cacti spawnable (and increase every couple of levels) - Done for Level 4, but without major position checking we can't really have more than 3 cacti without making the level unwinnable
 5. Armour Powerup
 6. Screen Shake on Powerup?
 7. Start again ( Will teach us to Fork in Github)

@@ -33,13 +33,13 @@ func _on_hud_start_game() -> void:
 	new_game()
 	
 func game_over():
-	$endSound.play()
+	$Sounds/endSound.play()
 	playing = false
 	$gametimer.stop()
 	get_tree().call_group("coins", "queue_free")
 	$HUD.show_game_over()
 	$Player.die()
-	$BGMusic.playing = false
+	$Sounds/BGMusic.playing = false
 	
 func new_game():	# Now lets get this show on the road
 	playing = true
@@ -52,10 +52,20 @@ func new_game():	# Now lets get this show on the road
 	spawn_coins()
 	$HUD.update_score(score)
 	$HUD.update_timer(time_left)
-	$BGMusic.playing = true
+	$Sounds/BGMusic.playing = true
+	$Cacti/cactus3.get_node("CollisionShape2D").disabled= true
 	
+func spawn_cacti():
+	$Cacti/cactus.position = Vector2(randi_range(50, screensize.x-50), randi_range(100, screensize.y - 100))
+	$Cacti/cactus2.position = Vector2(randi_range(50, screensize.x-50), randi_range(100, screensize.y - 100))
+	$Cacti/cactus3.position = Vector2(randi_range(50, screensize.x-50), randi_range(100, screensize.y - 100))
+	if level > 4:
+		$Cacti/cactus3.show()
+		$Cacti/cactus3.get_node("CollisionShape2D").disabled= false
+
 func spawn_coins():
-	$levelSound.play()
+	$Sounds/levelSound.play()
+	spawn_cacti()
 	for i in level + 4:
 		var c = coin_scene.instantiate()
 		add_child(c)
@@ -74,11 +84,11 @@ func _on_player_hurt() -> void:
 func _on_player_pickup(type) -> void:
 	match type:
 		"coin":
-			$coinSound.play()
+			$Sounds/coinSound.play()
 			score += 1
 			$HUD.update_score(score)
 		"powerup":
-			$powerUpSound.play()
+			$Sounds/powerUpSound.play()
 			time_left += 5
 			$HUD.update_timer(time_left)
 	
