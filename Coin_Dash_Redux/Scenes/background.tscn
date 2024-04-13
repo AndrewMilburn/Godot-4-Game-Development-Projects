@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=3 uid="uid://bdy4tinhht5cm"]
+
+[ext_resource type="Texture2D" uid="uid://c5lyeiinjwfuh" path="res://Assets/grass.png" id="1_7k5aa"]
+
+[node name="Background" type="Node2D"]
+metadata/_edit_group_ = true
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 634.0
+offset_bottom = 931.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_7k5aa")
+stretch_mode = 1

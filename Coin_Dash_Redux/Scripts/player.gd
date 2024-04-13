@@ -1,0 +1,21 @@
+extends Area2D
+
+@export var speed = 200
+
+func _ready() -> void:
+	position = Vector2(100, 100)
+
+func _process(delta):
+	var velocity = Vector2()
+
+	if Input.is_action_pressed('ui_right'):
+		velocity.x += 1
+	if Input.is_action_pressed('ui_left'):
+		velocity.x -= 1
+	if Input.is_action_pressed('ui_down'):
+		velocity.y += 1
+	if Input.is_action_pressed('ui_up'):
+		velocity.y -= 1
+	print_debug(velocity)
+	position += velocity * speed * delta
+
