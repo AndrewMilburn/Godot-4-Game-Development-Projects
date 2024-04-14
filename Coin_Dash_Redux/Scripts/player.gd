@@ -1,21 +1,13 @@
 extends Area2D
 
-@export var speed = 200
+@export var speed:int
+var velocity = Vector2()
 
-func _ready() -> void:
-	position = Vector2(100, 100)
 
 func _process(delta):
-	var velocity = Vector2()
-
-	if Input.is_action_pressed('ui_right'):
-		velocity.x += 1
-	if Input.is_action_pressed('ui_left'):
-		velocity.x -= 1
-	if Input.is_action_pressed('ui_down'):
-		velocity.y += 1
-	if Input.is_action_pressed('ui_up'):
-		velocity.y -= 1
-	print_debug(velocity)
+	
+	velocity = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down",)
 	position += velocity * speed * delta
 
+func startGame():
+	position = Vector2(100, 100)

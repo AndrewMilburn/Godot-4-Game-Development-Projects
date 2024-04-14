@@ -73,15 +73,14 @@ size = Vector2(17, 23)
 
 [node name="Player" type="Area2D"]
 script = ExtResource("1_hwix0")
+speed = 350
 metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_dlhhs")
 animation = &"run"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-1.5, 4.5)
 shape = SubResource("RectangleShape2D_d64ud")
-
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(309, 464)
