@@ -3,8 +3,8 @@ extends Area2D
 @export var speed:int
 var velocity = Vector2()
 var screensize:Vector2
-var screenwidth:int
-var screenheight:int
+var screenwidth:float
+var screenheight:float
 
 
 func _ready() -> void:

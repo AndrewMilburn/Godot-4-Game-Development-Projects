@@ -1,10 +1,13 @@
 extends Node2D
 
-#var screensize:Vector2
-#var screen_size:Vector2
+var screensize:Vector2
+var shakey:bool
 
-#func _ready() -> void:
-	#screen_size = get_viewport_rect().size
-	#screensize = get_viewport().get_visible_rect().size
-	#print_debug(screen_size)
-	#print_debug(screensize)
+func _ready() -> void:
+	screensize = get_viewport_rect().size
+	
+
+func _process(_delta: float) -> void:
+	shakey = Input.is_action_just_pressed("ui_down")
+	if shakey:
+		$shake_camera.add_trauma(1)

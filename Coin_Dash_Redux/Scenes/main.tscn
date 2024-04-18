@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://dt3j1pb8j85pg"]
+[gd_scene load_steps=5 format=3 uid="uid://dt3j1pb8j85pg"]
 
 [ext_resource type="PackedScene" uid="uid://b21qepogc137e" path="res://Scenes/player.tscn" id="1_3htah"]
 [ext_resource type="Script" path="res://Scripts/main.gd" id="1_knytk"]
 [ext_resource type="PackedScene" uid="uid://bdy4tinhht5cm" path="res://Scenes/background.tscn" id="2_8ii2u"]
+[ext_resource type="PackedScene" uid="uid://bfan1es1xl0il" path="res://Scenes/shake_camera.tscn" id="4_vn1ng"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_knytk")
@@ -11,3 +12,6 @@ script = ExtResource("1_knytk")
 
 [node name="Player" parent="." instance=ExtResource("1_3htah")]
 speed = 400
+
+[node name="shake_camera" parent="." instance=ExtResource("4_vn1ng")]
+position = Vector2(311, 465)
