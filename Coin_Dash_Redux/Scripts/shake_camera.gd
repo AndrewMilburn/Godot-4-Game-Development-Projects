@@ -6,7 +6,7 @@ extends Camera2D
 
 @export var target: NodePath
 
-var trauma = 1.0  # Current shake strength.
+var trauma = 0.0  # Current shake strength.
 var trauma_power = 2  # Trauma exponent. Use [2, 3]
 
 func _ready():
