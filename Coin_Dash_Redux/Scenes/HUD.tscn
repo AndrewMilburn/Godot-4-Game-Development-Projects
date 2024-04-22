@@ -20,3 +20,51 @@ theme_override_fonts/font = ExtResource("1_n5k8m")
 theme_override_font_sizes/font_size = 50
 text = "Start
 "
+
+[node name="status_container" type="MarginContainer" parent="."]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 134.0
+grow_horizontal = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 5
+
+[node name="status_time" type="Label" parent="status_container"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_n5k8m")
+theme_override_font_sizes/font_size = 60
+text = "000"
+
+[node name="status_score" type="Label" parent="status_container"]
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_fonts/font = ExtResource("1_n5k8m")
+theme_override_font_sizes/font_size = 60
+text = "000"
+horizontal_alignment = 2
+
+[node name="label_container" type="MarginContainer" parent="."]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 60.0
+grow_horizontal = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 15
+
+[node name="lbl_time" type="Label" parent="label_container"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_n5k8m")
+theme_override_font_sizes/font_size = 30
+text = "Time"
+
+[node name="lbl_score" type="Label" parent="label_container"]
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_fonts/font = ExtResource("1_n5k8m")
+theme_override_font_sizes/font_size = 30
+text = "Score"
+horizontal_alignment = 2
