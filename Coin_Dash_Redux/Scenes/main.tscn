@@ -18,3 +18,5 @@ speed = 400
 
 [node name="shake_camera" parent="." instance=ExtResource("4_vn1ng")]
 position = Vector2(311, 465)
+
+[connection signal="start_game" from="HUD" to="." method="_on_hud_start_game"]
