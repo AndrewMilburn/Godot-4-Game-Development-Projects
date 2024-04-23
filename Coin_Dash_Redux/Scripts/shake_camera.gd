@@ -23,7 +23,6 @@ func _process(delta):
 
 func shake():
 	var amount = pow(trauma, trauma_power)
-	print_debug(amount)
 	rotation = max_roll * amount * randf_range(-1, 1)
 	offset.x = max_offset.x * amount * randf_range(-1, 1)
 	offset.y = max_offset.y * amount * randf_range(-1, 1)
