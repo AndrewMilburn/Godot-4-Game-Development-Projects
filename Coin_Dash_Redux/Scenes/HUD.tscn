@@ -1,13 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://c8ovv2asbtseb"]
+[gd_scene load_steps=4 format=3 uid="uid://c8ovv2asbtseb"]
 
 [ext_resource type="Script" path="res://Scripts/HUD.gd" id="1_lb6nm"]
 [ext_resource type="FontFile" uid="uid://dg3eds7mv1w24" path="res://Assets/Zombie Blood.ttf" id="1_n5k8m"]
+[ext_resource type="FontFile" uid="uid://cxh47v1htm43h" path="res://Assets/Alice_in_Wonderland_3.ttf" id="3_gd4ph"]
 
 [node name="HUD" type="CanvasLayer"]
 script = ExtResource("1_lb6nm")
 
 [node name="btn_start" type="Button" parent="."]
-visible = false
 anchors_preset = -1
 anchor_left = 0.5
 anchor_top = 0.96
@@ -25,7 +25,6 @@ text = "Start
 "
 
 [node name="btn_instructions" type="Button" parent="."]
-visible = false
 anchors_preset = -1
 anchor_left = 0.5
 anchor_top = 0.96
@@ -43,7 +42,6 @@ text = "How To Play
 "
 
 [node name="status_container" type="MarginContainer" parent="."]
-visible = false
 anchors_preset = 10
 anchor_right = 1.0
 offset_bottom = 134.0
@@ -68,7 +66,6 @@ text = "000"
 horizontal_alignment = 2
 
 [node name="label_container" type="MarginContainer" parent="."]
-visible = false
 anchors_preset = 10
 anchor_right = 1.0
 offset_bottom = 60.0
@@ -93,7 +90,6 @@ text = "Score"
 horizontal_alignment = 2
 
 [node name="lbl_output" type="Label" parent="."]
-visible = false
 anchors_preset = 14
 anchor_top = 0.5
 anchor_right = 1.0
@@ -102,11 +98,59 @@ offset_top = -49.0
 offset_bottom = 49.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_colors/font_color = Color(0.180392, 0, 0, 0.85098)
+theme_override_colors/font_color = Color(0.286275, 0, 0, 0.905882)
+theme_override_colors/font_shadow_color = Color(0.0156863, 0.0156863, 0.0156863, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
 theme_override_fonts/font = ExtResource("1_n5k8m")
 theme_override_font_sizes/font_size = 100
 text = "Brain Dash !!!"
 horizontal_alignment = 1
 
+[node name="instruction_set" type="MarginContainer" parent="."]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="lbl_to_play" type="Label" parent="instruction_set"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_fonts/font = ExtResource("3_gd4ph")
+theme_override_font_sizes/font_size = 100
+text = "How To Play"
+horizontal_alignment = 1
+
+[node name="lbl_to_play2" type="Label" parent="instruction_set"]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_gd4ph")
+theme_override_font_sizes/font_size = 40
+text = "Use Arrow keys, WASD, or on-screen arrows to move
+
+Collect all the Coins on one level to get to the next
+
+Avoid the Cacti!!
+
+A Bonus will appear at random, running into it will gain you an extra 5 seconds
+"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="btn_back" type="Button" parent="instruction_set"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme_override_fonts/font = ExtResource("3_gd4ph")
+theme_override_font_sizes/font_size = 60
+text = "Back"
+
 [connection signal="pressed" from="btn_start" to="." method="_on_btn_start_pressed"]
 [connection signal="pressed" from="btn_instructions" to="." method="_on_btn_instructions_pressed"]
+[connection signal="pressed" from="instruction_set/btn_back" to="." method="_on_btn_back_pressed"]
