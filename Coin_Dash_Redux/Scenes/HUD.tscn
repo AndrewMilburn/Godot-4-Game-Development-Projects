@@ -7,16 +7,23 @@
 [node name="HUD" type="CanvasLayer"]
 script = ExtResource("1_lb6nm")
 
-[node name="btn_start" type="Button" parent="."]
+[node name="title_screen" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="btn_start" type="Button" parent="title_screen"]
+layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.5
 anchor_top = 0.96
 anchor_right = 0.5
 anchor_bottom = 0.96
-offset_left = -80.0
-offset_top = -283.2
-offset_right = 80.0
-offset_bottom = -196.2
+offset_left = 210.0
+offset_top = 561.6
+offset_right = 370.0
+offset_bottom = 648.6
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_fonts/font = ExtResource("1_n5k8m")
@@ -24,16 +31,17 @@ theme_override_font_sizes/font_size = 60
 text = "Start
 "
 
-[node name="btn_instructions" type="Button" parent="."]
+[node name="btn_instructions" type="Button" parent="title_screen"]
+layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.5
 anchor_top = 0.96
 anchor_right = 0.5
 anchor_bottom = 0.96
-offset_left = -129.5
-offset_top = -133.2
-offset_right = 129.5
-offset_bottom = -46.2
+offset_left = 160.5
+offset_top = 711.6
+offset_right = 419.5
+offset_bottom = 798.6
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_fonts/font = ExtResource("1_n5k8m")
@@ -41,9 +49,11 @@ theme_override_font_sizes/font_size = 60
 text = "How To Play
 "
 
-[node name="status_container" type="MarginContainer" parent="."]
+[node name="status_container" type="MarginContainer" parent="title_screen"]
+layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
+offset_right = 66.0
 offset_bottom = 134.0
 grow_horizontal = 2
 theme_override_constants/margin_left = 10
@@ -51,13 +61,13 @@ theme_override_constants/margin_top = 50
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 5
 
-[node name="status_time" type="Label" parent="status_container"]
+[node name="status_time" type="Label" parent="title_screen/status_container"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_n5k8m")
 theme_override_font_sizes/font_size = 60
 text = "000"
 
-[node name="status_score" type="Label" parent="status_container"]
+[node name="status_score" type="Label" parent="title_screen/status_container"]
 layout_mode = 2
 size_flags_horizontal = 8
 theme_override_fonts/font = ExtResource("1_n5k8m")
@@ -65,9 +75,11 @@ theme_override_font_sizes/font_size = 60
 text = "000"
 horizontal_alignment = 2
 
-[node name="label_container" type="MarginContainer" parent="."]
+[node name="label_container" type="MarginContainer" parent="title_screen"]
+layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
+offset_right = 41.0
 offset_bottom = 60.0
 grow_horizontal = 2
 theme_override_constants/margin_left = 10
@@ -75,13 +87,13 @@ theme_override_constants/margin_top = 5
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 15
 
-[node name="lbl_time" type="Label" parent="label_container"]
+[node name="lbl_time" type="Label" parent="title_screen/label_container"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_n5k8m")
 theme_override_font_sizes/font_size = 30
 text = "Time"
 
-[node name="lbl_score" type="Label" parent="label_container"]
+[node name="lbl_score" type="Label" parent="title_screen/label_container"]
 layout_mode = 2
 size_flags_horizontal = 8
 theme_override_fonts/font = ExtResource("1_n5k8m")
@@ -89,13 +101,15 @@ theme_override_font_sizes/font_size = 30
 text = "Score"
 horizontal_alignment = 2
 
-[node name="lbl_output" type="Label" parent="."]
+[node name="lbl_output" type="Label" parent="title_screen"]
+layout_mode = 1
 anchors_preset = 14
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_top = -49.0
-offset_bottom = 49.0
+offset_top = 375.0
+offset_right = 416.0
+offset_bottom = 505.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.286275, 0, 0, 0.905882)
@@ -151,6 +165,6 @@ theme_override_fonts/font = ExtResource("3_gd4ph")
 theme_override_font_sizes/font_size = 60
 text = "Back"
 
-[connection signal="pressed" from="btn_start" to="." method="_on_btn_start_pressed"]
-[connection signal="pressed" from="btn_instructions" to="." method="_on_btn_instructions_pressed"]
+[connection signal="pressed" from="title_screen/btn_start" to="." method="_on_btn_start_pressed"]
+[connection signal="pressed" from="title_screen/btn_instructions" to="." method="_on_btn_instructions_pressed"]
 [connection signal="pressed" from="instruction_set/btn_back" to="." method="_on_btn_back_pressed"]
