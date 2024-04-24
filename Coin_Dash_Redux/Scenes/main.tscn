@@ -1,13 +1,15 @@
-[gd_scene load_steps=6 format=3 uid="uid://dt3j1pb8j85pg"]
+[gd_scene load_steps=7 format=3 uid="uid://dt3j1pb8j85pg"]
 
 [ext_resource type="PackedScene" uid="uid://b21qepogc137e" path="res://Scenes/player.tscn" id="1_3htah"]
 [ext_resource type="Script" path="res://Scripts/main.gd" id="1_knytk"]
 [ext_resource type="PackedScene" uid="uid://bdy4tinhht5cm" path="res://Scenes/background.tscn" id="2_8ii2u"]
+[ext_resource type="PackedScene" uid="uid://cj3cbw5876ffi" path="res://Scenes/brain.tscn" id="2_ttunf"]
 [ext_resource type="PackedScene" uid="uid://bfan1es1xl0il" path="res://Scenes/shake_camera.tscn" id="4_vn1ng"]
 [ext_resource type="PackedScene" uid="uid://c8ovv2asbtseb" path="res://Scenes/HUD.tscn" id="5_4jnrs"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_knytk")
+brain_scene = ExtResource("2_ttunf")
 
 [node name="HUD" parent="." instance=ExtResource("5_4jnrs")]
 
