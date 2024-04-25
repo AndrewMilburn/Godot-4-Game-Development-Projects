@@ -4,6 +4,7 @@ var screensize:Vector2
 var shakey:bool
 var is_playing: bool = false
 var score: int = 0
+var level: int = 1
 @export var brain_scene : PackedScene
 
 func _ready() -> void:
@@ -24,8 +25,27 @@ func new_game():
 	score = 0
 	is_playing = true
 	$Player.show()
-	var b = brain_scene.instantiate()
-	add_child(b)
-	b.position=Vector2(randi() % 200 + 100, randi() % 200 + 100)
+	spawn_brains()
+
+
+func spawn_brains():
+	for i in range(1, level + 4):
+		var b = brain_scene.instantiate()
+		add_child(b)
+		b.position=Vector2(randi() % 200 + 100, randi() % 200 + 100)
+		
+			
+		
+
+
+
+
+
+
+
+
+
+
+
 
 
