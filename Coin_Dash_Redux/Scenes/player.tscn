@@ -71,7 +71,7 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d64ud"]
 size = Vector2(17, 23)
 
-[node name="Player" type="Area2D"]
+[node name="Player" type="Area2D" groups=["Player"]]
 script = ExtResource("1_hwix0")
 speed = 350
 metadata/_edit_group_ = true

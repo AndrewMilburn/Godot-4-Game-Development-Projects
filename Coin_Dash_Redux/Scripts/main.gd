@@ -29,10 +29,10 @@ func new_game():
 
 
 func spawn_brains():
-	for i in range(1, level + 4):
+	for i in range(1, level + 5):
 		var b = brain_scene.instantiate()
 		add_child(b)
-		b.position=Vector2(randi() % 200 + 100, randi() % 200 + 100)
+		b.position=Vector2(randi() % 550 + 50, randi() % 650 + 150)
 		
 			
 		

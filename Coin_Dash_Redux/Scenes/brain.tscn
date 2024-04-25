@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Scripts/brain.gd" id="1_toh03"]
 [ext_resource type="Texture2D" uid="uid://fnjmenn7hy5a" path="res://Assets/brain.png" id="2_exn1a"]
 
-[node name="brain" type="Area2D"]
+[node name="brain" type="Area2D" groups=["collectables"]]
 script = ExtResource("1_toh03")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -11,3 +11,5 @@ texture = ExtResource("2_exn1a")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 polygon = PackedVector2Array(15, -25, 19, -23, 24, -19, 27, -15, 29, -11, 29, -4, 23, 2, 14, 4, 11, 10, 6, 13, 0, 14, -4, 27, -8, 27, -9, 19, -11, 20, -17, 22, -23, 22, -25, 18, -23, 14, -26, 14, -29, 8, -30, -2, -29, -10, -25, -17, -19, -22, -9, -26, -4, -27, 8, -27)
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
