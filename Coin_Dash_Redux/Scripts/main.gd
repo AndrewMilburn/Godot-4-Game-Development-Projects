@@ -34,9 +34,8 @@ func spawn_brains():
 		add_child(b)
 		b.position=Vector2(randi() % 550 + 50, randi() % 650 + 150)
 		
-			
-		
-
+func _on_player_ate_brain():
+	print_debug("Yum")
 
 
 

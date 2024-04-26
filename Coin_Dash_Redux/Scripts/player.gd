@@ -1,5 +1,7 @@
 extends Area2D
 
+signal ate_brain
+
 @export var speed:int
 var velocity = Vector2()
 var screensize:Vector2
@@ -25,3 +27,9 @@ func _process(delta):
 		$AnimatedSprite2D.set_flip_h(true)
 	else:
 		$AnimatedSprite2D.set_flip_h(false)
+
+
+func _on_area_entered(area: Area2D) -> void:
+	if area.is_in_group("collectables"):
+		print_debug("Brain")
+		ate_brain.emit()
