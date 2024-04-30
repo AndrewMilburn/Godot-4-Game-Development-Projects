@@ -32,6 +32,7 @@ func spawn_brains():
 	for i in range(1, level + 5):
 		var b = brain_scene.instantiate()
 		add_child(b)
+		move_child(b,2)
 		b.position=Vector2(randi() % 550 + 50, randi() % 650 + 150)
 		
 func _on_player_ate_brain():
