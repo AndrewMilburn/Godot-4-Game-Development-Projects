@@ -18,3 +18,6 @@ func _on_btn_instructions_pressed() -> void:
 func _on_btn_back_pressed() -> void:
 	$title_screen.show()
 	$instruction_set.hide()
+
+func _on_main_play_timer_tick(play_time) -> void:
+	$title_screen/status_container/status_time.text = str(play_time)

@@ -21,4 +21,8 @@ speed = 400
 [node name="shake_camera" parent="." instance=ExtResource("4_vn1ng")]
 position = Vector2(311, 465)
 
+[node name="play_timer" type="Timer" parent="."]
+
+[connection signal="play_timer_tick" from="." to="HUD" method="_on_main_play_timer_tick"]
 [connection signal="start_game" from="HUD" to="." method="_on_hud_start_game"]
+[connection signal="timeout" from="play_timer" to="." method="_on_play_timer_timeout"]
