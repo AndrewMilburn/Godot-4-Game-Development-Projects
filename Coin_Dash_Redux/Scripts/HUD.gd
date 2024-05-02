@@ -20,4 +20,4 @@ func _on_btn_back_pressed() -> void:
 	$instruction_set.hide()
 
 func _on_main_play_timer_tick(play_time) -> void:
-	$title_screen/status_container/status_time.text = str(play_time)
+	$title_screen/StatusContainer/status_time.text = str(play_time)

@@ -14,15 +14,17 @@ brain_scene = ExtResource("2_ttunf")
 [node name="HUD" parent="." instance=ExtResource("5_4jnrs")]
 
 [node name="Background" parent="." instance=ExtResource("2_8ii2u")]
+position = Vector2(4, -67)
 
 [node name="Player" parent="." instance=ExtResource("1_3htah")]
 speed = 400
 
 [node name="shake_camera" parent="." instance=ExtResource("4_vn1ng")]
-position = Vector2(311, 465)
+position = Vector2(298, 398)
 
 [node name="play_timer" type="Timer" parent="."]
 
 [connection signal="play_timer_tick" from="." to="HUD" method="_on_main_play_timer_tick"]
 [connection signal="start_game" from="HUD" to="." method="_on_hud_start_game"]
+[connection signal="ate_brain" from="Player" to="." method="_on_player_ate_brain"]
 [connection signal="timeout" from="play_timer" to="." method="_on_play_timer_timeout"]

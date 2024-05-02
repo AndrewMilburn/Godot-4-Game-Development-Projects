@@ -17,7 +17,7 @@ func _process(_delta: float) -> void:
 	if is_playing:
 		shakey = Input.is_action_just_pressed("ui_select")
 		if shakey:
-			$shake_camera.add_trauma(.35)
+			$shake_camera.add_trauma(0.4)
 
 
 func _on_hud_start_game() -> void:
