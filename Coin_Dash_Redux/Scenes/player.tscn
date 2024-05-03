@@ -76,7 +76,7 @@ metadata/_edit_group_ = true
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_dlhhs")
-animation = &"run"
+animation = &"hurt"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionPolygon2D" parent="."]

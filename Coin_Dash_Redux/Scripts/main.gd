@@ -6,7 +6,7 @@ var is_playing: bool = false
 var score: int = 0
 var level: int = 1
 @export var brain_scene : PackedScene
-var game_time: int = 30
+var game_time: int = 5
 signal play_timer_tick
 
 func _ready() -> void:
@@ -45,7 +45,17 @@ func _on_player_ate_brain():
 func _on_play_timer_timeout() -> void:
 	game_time -= 1
 	play_timer_tick.emit(game_time)
-
+	if game_time <= 0:
+		$Player.die()
+		end_game()
+		
+func end_game():
+	is_playing = false
+	$play_timer.stop()
+	set_process(false)
+	$HUD.game_over()
+	for brains in get_tree().get_nodes_in_group("collectables"):
+		brains.queue_free()
 
 
 
