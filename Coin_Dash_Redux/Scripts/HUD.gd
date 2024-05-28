@@ -29,5 +29,6 @@ func game_over():
 	$lbl_output.text = "Brain Dash !!!"
 	$title_screen.show()
 	
-	
+func update_score(score):
+	$StatusContainer/status_score.text = str(score)
 	

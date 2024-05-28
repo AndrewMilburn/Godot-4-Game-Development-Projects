@@ -41,6 +41,8 @@ func spawn_brains():
 		
 func _on_player_ate_brain():
 	print_debug("Yum")
+	score += 1
+	$HUD.update_score(score)
 
 func _on_play_timer_timeout() -> void:
 	game_time -= 1
@@ -51,6 +53,7 @@ func _on_play_timer_timeout() -> void:
 		
 func end_game():
 	is_playing = false
+	
 	$play_timer.stop()
 	set_process(false)
 	$HUD.game_over()

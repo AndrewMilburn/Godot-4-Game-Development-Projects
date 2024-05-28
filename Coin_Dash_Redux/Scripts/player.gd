@@ -36,10 +36,14 @@ func _on_area_entered(area: Area2D) -> void:
 		print_debug("Brain")
 		ate_brain.emit()
 		area.queue_free()
+		
 
 func die():
 	$AnimatedSprite2D.play("hurt")
 	set_process(false)
+	$death_timer.start()
+	await $death_timer.timeout
+	hide()
 
 
 
