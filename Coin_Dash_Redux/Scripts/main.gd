@@ -12,6 +12,7 @@ signal play_timer_tick
 
 func _ready() -> void:
 	screensize = get_viewport_rect().size
+	$Player.connect("obstacle_hit",end_game)
 	$Player.hide()
 
 func _process(_delta: float) -> void:
@@ -70,7 +71,9 @@ func end_game():
 	for obstacles in get_tree().get_nodes_in_group("obstacles"):
 		obstacles.queue_free()
 
-
+func change_level():
+	level += 1
+	
 
 
 

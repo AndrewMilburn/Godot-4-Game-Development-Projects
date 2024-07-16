@@ -1,6 +1,7 @@
 extends Area2D
 
 signal ate_brain
+signal obstacle_hit
 
 @export var speed:int
 var velocity = Vector2()
@@ -36,6 +37,9 @@ func _on_area_entered(area: Area2D) -> void:
 		print_debug("Brain")
 		ate_brain.emit()
 		area.queue_free()
+	elif area.is_in_group("obstacles"):
+		emit_signal("obstacle_hit")
+		die()
 		
 
 func die():
